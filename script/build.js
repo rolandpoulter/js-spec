@@ -3,7 +3,7 @@ var BoxJS = require('bxjs'),
 
 module.exports = new BoxJS({
 	name: 'Spec',
-	main: './lib/Spec.js',
+	main: './lib/Spec.dom.js',
 	from: path.resolve(__dirname + '/../'),
 	watch: true,
 	write: path.resolve(__dirname + '/../Spec.js'),
@@ -16,7 +16,7 @@ module.exports = new BoxJS({
 }, logRebuilt);
 
 function logRebuilt (err) {
-	if (err) console.error(err);
+	if (err) console.error(err.stack);
 
 	console.log('Re-built Spec.js');
 }

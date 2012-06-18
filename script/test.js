@@ -1,1 +1,3 @@
-require('../test/index.js');
+var spec = require('../test/index.js');
+
+require('spc/reporter/dot')(spec);

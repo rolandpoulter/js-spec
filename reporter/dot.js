@@ -18,7 +18,13 @@ module.exports = function (spec) {
 	});
 
 	return spec.report(function (results) {
-		results.failures.forEach(function (test) {
+		//charm.write('\n');
+
+		if (results.stack) {
+			console.log(results.stack)
+		}
+
+		if (results.failures) results.failures.forEach(function (test) {
 			var fullName = [],
 			    parents = [],
 			    name = test.options.name,
@@ -51,13 +57,21 @@ module.exports = function (spec) {
 			//eyes.inspect(test.failure);
 		});
 
+		else results.failures = {length: 1};
+
+		if (!isFinite(results.total)) results.total = 0;
+
+		var failed = results.failures.length;
+
 		charm.
 				write('\n\n').
 				move(2, 1).
-				foreground(results.failures.length ? 'red' : 'green').
-				write(results.failures.length.toString()).
+				foreground(failed ? 'red' : 'green').
+				write((failed ? failed : results.total - failed).toString()).
+				write('/' + results.total).
+				write(' ').
+				write(failed ? 'failed' : 'passed').
 				display('reset').
-				write(' failure' + (results.failures.length !== 1 ? 's' : '')).
 				write('\n\n');
 
 		process.exit(results.failures.length);

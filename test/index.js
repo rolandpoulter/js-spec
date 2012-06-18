@@ -5,5 +5,3 @@ module.exports = require('spc').describe('Spec', function () {
 		should();
 	});
 });
-
-require('spc/reporter/dot')(module.exports);

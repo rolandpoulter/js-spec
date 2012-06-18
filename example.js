@@ -1,6 +1,6 @@
-var Spec = require('./lib/Spec');
+if (typeof Spec === 'undefined') Spec = require('./lib/Spec');
 
-Spec.describe('spec', function () {
+example = Spec.describe('spec', function () {
 	console.log('describe a spec');
 
 	before(function (done) {
@@ -65,7 +65,8 @@ Spec.describe('spec', function () {
 			true.should.be.ok;
 		});
 	});
+});
 
-}).report(function (results) {
-	console.log('exit', results);
+if (typeof window === 'undefined') example.report(function (results) {
+	console.log('exit');
 });

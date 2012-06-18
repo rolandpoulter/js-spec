@@ -9,6 +9,7 @@
 	"description": "",
 	"contributors": [],
 	"dependencies": {
+		"mttr": ">= 0.0.1",
 		"ptns": ">= 0.0.1",
 		"chai": ">= 1.0.4",
 		"async": ">= 0.1.22",
