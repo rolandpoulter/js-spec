@@ -20,8 +20,16 @@ module.exports = function (spec) {
 	return spec.report(function (results) {
 		//charm.write('\n');
 
+		if (typeof results === 'string') {
+			results = new Error(results);
+		}
+
 		if (results.stack) {
-			console.log(results.stack)
+			charm.
+				write('\n\n').
+				move(2, 1).
+				foreground('red').
+				write(results.stack);
 		}
 
 		if (results.failures) results.failures.forEach(function (test) {
@@ -74,6 +82,6 @@ module.exports = function (spec) {
 				display('reset').
 				write('\n\n');
 
-		process.exit(results.failures.length);
+		process.exit(failed);
 	});
 };
