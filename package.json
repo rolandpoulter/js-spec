@@ -11,7 +11,7 @@
 	"contributors": [],
 	"dependencies": {
 		"mttr": "0.0.1",
-		"ptns": "0.0.1",
+		"ptns": "0.0.2",
 
 		"chai": ">= 1.0.4",
 		"eyes": ">= 0.1.7",
