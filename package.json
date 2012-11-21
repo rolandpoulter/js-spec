@@ -2,7 +2,7 @@
 	"name": "spc",
 	"main": "./lib/Spec.js",
 	"author": "rolandpoulter",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"keywords": ["spec", "bdd", "test"],
 	"homepage": "https://github.com/rolandpoulter/js-spec",
 	"browserify": "./lib/Spec.dom.js",
