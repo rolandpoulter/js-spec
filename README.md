@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/rolandpoulter/js-spec.png)](http://travis-ci.org/rolandpoulter/js-spec)
+
 Copyright (C) Infinity
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
